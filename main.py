@@ -1,5 +1,4 @@
 import cv2
-import time
 import mediapipe as mp
 import pyautogui as gui
 import HandTrackingModule as htm
@@ -9,8 +8,6 @@ import random
 w, h = gui.size()
 fingers = -1
 clickCnt = 1
-pTime = 0
-cTime = 0
 cap = cv2.VideoCapture(0)
 detector = htm.handDetector()
 isGestureMode = False
@@ -50,9 +47,5 @@ while True:
             print("down gesture")
             gui.press('pagedown')
             isGestureMode = False
-    cTime = time.time()
-    fps = 1/(cTime-pTime)
-    pTime = cTime
-    cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN,3, (255,0,255), 2);
     cv2.imshow("Image", img)
     cv2.waitKey(1)
