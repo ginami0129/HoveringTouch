@@ -32,19 +32,19 @@ while True:
               clickCnt = clickCnt + 1
         else:
           if fingerInfo[1] - lmList[12][1] > 0.2:
-            print("left gesture")
+            print("Left gesture")
             gui.press('a')
             isGestureMode = False
           elif fingerInfo[1] - lmList[12][1] < -0.2:
-            print("right gesture")
+            print("Right gesture")
             gui.press('d')
             isGestureMode = False
           elif fingerInfo[2] - lmList[12][2] > 0.33:
-            print("up gesture")
+            print("Up gesture")
             gui.press('pageup')
             isGestureMode = False
           elif fingerInfo[2] - lmList[12][2] < -0.33:
-            print("down gesture")
+            print("Down gesture")
             gui.press('pagedown')
             isGestureMode = False
     cv2.imshow("Image", img)
